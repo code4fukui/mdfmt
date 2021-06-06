@@ -1,5 +1,7 @@
 # mdfmtjp
 
+Markdown formatter for Japanese document (日本語ドキュメント用Markdownフォーマッター)
+
 ## install
 
 ```bash
