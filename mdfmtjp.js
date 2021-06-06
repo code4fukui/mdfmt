@@ -21,13 +21,20 @@ for await (const f of dir) {
   }
 
   // fmt num list
-  const ss = s.split("\n");
-  for (const line of ss) {
-    const n = line.match(/[#\s-](\d+)\S/);
-    if (n) {
-      console.log(n[1], line);
+  const ss = s2.split("\n");
+  for (let i = 0; i < ss.length; i++) {
+    const line = ss[i];
+    let n;
+    if (n = line.match(/^([#[\s-]*)(\d+)\.(\S.*)/)) {
+      //console.log(f.name, "x", n[1], line);
+      ss[i] = n[1] + n[2] + ". " + n[3];
+    }
+    if (n = line.match(/^([#[\s-]*)(\d+)([^\d\.].*)/)) {
+      //console.log(f.name, "y", n[1], line);
+      ss[i] = n[1] + n[2] + ". " + n[3];
     }
   }
+  s2 = ss.join("\n");
 
   if (s != s2) {
     console.log("modified: " + f.name);
