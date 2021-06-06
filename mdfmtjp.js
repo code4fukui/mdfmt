@@ -4,6 +4,7 @@ const normarize = {
   "｡": "。",
   "　": " ",
   "＃": "#",
+  "･": "・",
 };
 
 const dir = Deno.readDir("./");
